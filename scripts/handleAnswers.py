@@ -11,7 +11,9 @@ class HandleAnswers:
         for ind in data:
             self.questions.append(ind)
 
-        cwd = os.listdir(os.path.join(os.path.dirname(os.path.dirname(__file__)), "answers"))
+        self.ospath = os.path.join(os.path.dirname(os.path.dirname(__file__)), "answers")
+        cwd = os.listdir(self.ospath)
+
         txt_only = ".*\\.txt$"
 
         def txt_filter(file_name):
@@ -27,8 +29,14 @@ class HandleAnswers:
         self.answers = []
 
         for get_answers in correct_files:
-            txt = open(f"answers/{get_answers}", "r")
+            txt = open(os.path.join(self.ospath, get_answers), "r")
             raw_text = txt.read()
+            breaks = list(raw_text).count("\n")
+            while True:
+                if breaks < len(self.questions):
+                    raw_text += "\n"
+                else:
+                    break
             split_answers = raw_text.split("\n")
             self.answers.append(split_answers[:-1])
 
@@ -164,7 +172,6 @@ class HandleAnswers:
                             "alternativeArtists"
                         ],
                     }
-
                     player_outcome.append(
                         self.music_round(
                             correct_answers, player[current_player][question]
@@ -174,6 +181,8 @@ class HandleAnswers:
             self.outcomes.append({current_player: player_outcome})
 
             player_index += 1
+
+
         
 
 

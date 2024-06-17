@@ -1,11 +1,12 @@
 import json
 import sys
+import os
 
 
 class CheckQuestions:
     def __init__(self):
         # load json file of questions
-        json_file = open(sys.argv[2])
+        json_file = open(os.path.join(os.path.dirname(os.path.dirname(__file__)), "src/assets/questions.json"))
         data = json.load(json_file)
         self.questions = []
         for ind in data:
@@ -196,7 +197,6 @@ class CheckQuestions:
         print("Successfully created template.")
 
 
-# print(sys.argv[1])
 
 add = CheckQuestions()
 try:
@@ -209,4 +209,6 @@ try:
         add.audit_questions()
         add.export()
 except IndexError:
-    print("?")
+    print("--Please type 'python control.py *--")
+    print("*check: checks the questions to make sure questions.json is compatible and shows statistics.")
+    print("*export: exports questions into txt format for users.")
