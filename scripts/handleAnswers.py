@@ -31,14 +31,15 @@ class HandleAnswers:
         for get_answers in correct_files:
             txt = open(os.path.join(self.ospath, get_answers), "r")
             raw_text = txt.read()
-            breaks = list(raw_text).count("\n")
-            while True:
-                if breaks < len(self.questions):
-                    raw_text += "\n"
-                else:
-                    break
             split_answers = raw_text.split("\n")
-            self.answers.append(split_answers[:-1])
+            temp_list = []
+            for add_answers in range(len(self.questions)):
+                try:
+                    temp_list.append(split_answers[add_answers])
+                except IndexError:
+                    temp_list.append("pass ¬ pass")
+            self.answers.append(temp_list)
+
 
     def format_questions(self, entry):
         return re.sub(r"^[^.]*\.", "", entry).strip()
@@ -182,8 +183,6 @@ class HandleAnswers:
 
             player_index += 1
 
-
-        
 
 
 handle = HandleAnswers()
