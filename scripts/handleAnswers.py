@@ -2,9 +2,6 @@ import json
 import os
 import re
 
-print(__file__)
-print(os.path.dirname(__file__))
-print(os.path.join(os.path.dirname(os.path.dirname(__file__)), "answers"))
 
 class HandleAnswers:
     def __init__(self):
