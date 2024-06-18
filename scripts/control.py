@@ -6,7 +6,11 @@ import os
 class CheckQuestions:
     def __init__(self):
         # load json file of questions
-        json_file = open(os.path.join(os.path.dirname(os.path.dirname(__file__)), "src/assets/questions.json"))
+        json_file = open(
+            os.path.join(
+                os.path.dirname(os.path.dirname(__file__)), "src/assets/questions.json"
+            )
+        )
         data = json.load(json_file)
         self.questions = []
         for ind in data:
@@ -37,8 +41,7 @@ class CheckQuestions:
             "missing straight keys": "Keys missing for Straight Answer.",
             "alt artists dict": "alternativeArtist keys should be dict type.",
             "alt artists list": "alternativeArtist values should be list type.",
-            "string for alt artist list": "values within alternativeArtists keys should be strings only."
-            
+            "string for alt artist list": "values within alternativeArtists keys should be strings only.",
         }
 
     def question_types(self):
@@ -114,13 +117,16 @@ class CheckQuestions:
                 if check_values not in self.questions[entry]["artists"]:
                     self.pseudo_error(entry, "alternative aritsts")
 
-                if not isinstance(self.questions[entry]["alternativeArtists"][check_values], list):
+                if not isinstance(
+                    self.questions[entry]["alternativeArtists"][check_values], list
+                ):
                     self.pseudo_error(entry, "alt artists list")
 
-                for alt_str in self.questions[entry]["alternativeArtists"][check_values]:
+                for alt_str in self.questions[entry]["alternativeArtists"][
+                    check_values
+                ]:
                     if not isinstance(alt_str, str):
                         self.pseudo_error(entry, "string for alt artist list")
-
 
         except KeyError:
             self.pseudo_error(entry, "missing music keys")
@@ -190,12 +196,30 @@ class CheckQuestions:
                 text_document += f"{question + 1}. \n"
             elif self.questions[question]["questionType"] == "Music Round":
                 text_document += f"{question + 1}. Artist(s) ¬ Title \n"
+        try:
+            os.mkdir(
+                (
+                    os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)), "scripts/output"
+                    )
+                )
+            )
+        except FileExistsError:
+            pass
+        txt_file = open(
 
-        txt_file = open("questionTemplate.txt", "a")
+                (
+                    os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)),
+                        "scripts/output/questionTemplate.txt",
+                    )
+                )
+            ,
+            "w",
+        )
         txt_file.write(text_document)
         txt_file.close()
         print("Successfully created template.")
-
 
 
 add = CheckQuestions()
@@ -210,5 +234,7 @@ try:
         add.export()
 except IndexError:
     print("--Please type 'python control.py *--")
-    print("*check: checks the questions to make sure questions.json is compatible and shows statistics.")
+    print(
+        "*check: checks the questions to make sure questions.json is compatible and shows statistics."
+    )
     print("*export: exports questions into txt format for users.")
