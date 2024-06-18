@@ -5,13 +5,19 @@ import re
 
 class HandleAnswers:
     def __init__(self):
-        json_file = open(os.path.join(os.path.dirname(os.path.dirname(__file__)), "src/assets/questions.json"))
+        json_file = open(
+            os.path.join(
+                os.path.dirname(os.path.dirname(__file__)), "src/assets/questions.json"
+            )
+        )
         data = json.load(json_file)
         self.questions = []
         for ind in data:
             self.questions.append(ind)
 
-        self.ospath = os.path.join(os.path.dirname(os.path.dirname(__file__)), "answers")
+        self.ospath = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)), "answers"
+        )
         cwd = os.listdir(self.ospath)
 
         txt_only = ".*\\.txt$"
@@ -39,7 +45,6 @@ class HandleAnswers:
                 except IndexError:
                     temp_list.append("pass ¬ pass")
             self.answers.append(temp_list)
-
 
     def format_questions(self, entry):
         return re.sub(r"^[^.]*\.", "", entry).strip()
@@ -183,8 +188,24 @@ class HandleAnswers:
 
             player_index += 1
 
+    def statistics(self):
+        scores = []
+
+        for get_scores in self.outcomes:
+            user = list(get_scores.keys())[0]
+            score = sum(get_scores[user])
+            scores.append([user, score])
+
+        score_sort = lambda sc: sc[1]
+        scores.sort(key=score_sort, reverse=True)
+
+        results_data = {"sorted scores": scores, "outcome_data": self.outcomes}
+
+        with open("data.json", "w") as f:
+            json.dump(results_data, f)
 
 
 handle = HandleAnswers()
 handle.split_answers()
 handle.calculate_scores()
+handle.statistics()
