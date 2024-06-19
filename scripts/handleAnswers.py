@@ -44,6 +44,7 @@ class HandleAnswers:
                     temp_list.append(split_answers[add_answers])
                 except IndexError:
                     temp_list.append("pass ¬ pass")
+                print
             self.answers.append(temp_list)
 
     def format_questions(self, entry):
@@ -204,23 +205,7 @@ class HandleAnswers:
 
         results_data = {"sorted scores": scores, "outcome_data": self.outcomes}
 
-        try:
-            os.mkdir(
-                (
-                    os.path.join(
-                        os.path.dirname(os.path.dirname(__file__)), "scripts/output"
-                    )
-                )
-            )
-        except FileExistsError:
-            pass
-
-        with open((
-                    os.path.join(
-                        os.path.dirname(os.path.dirname(__file__)),
-                        "scripts/output/answer_data.json",
-                    )
-                ), "w") as f:
+        with open("data.json", "w") as f:
             json.dump(results_data, f)
 
 

@@ -1,0 +1,185 @@
+[
+  {
+    "questionType": "Multiple Choice",
+    "question": "Farrokh Bulsara is the birth name of which celebrity?",
+    "options": ["Frank Sinatra", "Freddie Mercury", "Skrillex", "Tiger Woods"],
+    "correctAnswer": 1
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "How many teeth does an adult human have?",
+    "options": [20, 28, 32, 38],
+    "correctAnswer": 2
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "What was the initial relase year for Dead by Daylight?",
+    "options": [2014, 2015, 2016, 2017],
+    "correctAnswer": 2
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "Which YouTube channel has the most subsribers of all time?",
+    "options": ["T-Series", "WWE", "PewDiePie", "MrBeast"],
+    "correctAnswer": 3,
+    "notes": [
+      "T-Series 2nd: 267M",
+      "WWE 10th: 102M",
+      "PewDiePie 8th: 111M",
+      "MrBeast 1st: 281M"
+    ]
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "On average, how much does a 30 second Super Bowl advert cost?",
+    "options": ["$5Million", "$10Million", "$20Million", "$2.5Million"],
+    "correctAnswer": 0,
+    "notes": [
+      "According to  https://parade.com/living/super-bowl-commercial-cost"
+    ]
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "How many stripes on the flag of the USA?",
+    "options": [13, 14, 15, 16],
+    "correctAnswer": 0
+  },
+
+  {
+    "questionType": "Straight Answer",
+    "question": "What is the capital of New Zeland?",
+    "correctAnswer": "Wellington"
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "What does USB stand for?",
+    "options": [
+      "Unified System Buffer",
+      "Uninterrupted Signal Bus",
+      "Universal System Bus",
+      "Universal Serial Bus"
+    ],
+    "correctAnswer": 3
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "Which of these have the most followers?",
+    "options": [
+      "PSY (psy_oppa)",
+      "Snoop Dogg (SnoopDogg)",
+      "Kendrick Lamar (KendrickLamar)",
+      "Ed Sheeran (edsheeran)"
+    ],
+    "correctAnswer": 1,
+    "notes": [
+      "PSY 4.1M",
+      "Snoop Dogg 20.7M",
+      "Kendrick Lamar 12.7",
+      "Ed Sheeran 16.8"
+    ]
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "How many times have the UK scored 0 in the Eurovision song contest?",
+    "options": [1, 2, 3, 4],
+    "correctAnswer": 1,
+    "notes": ["2003 with Gemini: Cry Baby", "2021 with James Newman: Embers"]
+  },
+
+  {
+    "questionType": "Straight Answer",
+    "question": "Which archnemesis of Mario first appeard in the 1992 Super Mario Land 2: 6 Golden Coins as the final boss?",
+    "correctAnswer": "Wario"
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "What European country experienced the highest rate of population decline from 2015 - 2020?",
+    "options": ["Wales", "Italy", "Lithuania", "Germany"],
+    "correctAnswer": 2
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Naughty by Nature"],
+    "title": "O.P.P.",
+    "alternativeTitles": ["OPP", "O.P.P"],
+    "alternativeArtists": {}
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Post Malone", "21 Savage"],
+    "title": "rockstar",
+    "alternativeTitles": [],
+    "alternativeArtists": {}
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Lenny Kravitz"],
+    "title": "Fly Away",
+    "alternativeTitles": [],
+    "alternativeArtists": {}
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["boy pablo"],
+    "title": "Losing you",
+    "alternativeTitles": [],
+    "alternativeArtists": {}
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Michael Jackson"],
+    "title": "Thriller",
+    "alternativeTitles": [],
+    "alternativeArtists": {
+      "Michael Jackson": ["MJ", "M.J.", "M.J", "Micheal Jackson"]
+    }
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Dance Gavin Dance"],
+    "title": "The Ghost of Billy Royalton",
+    "alternativeTitles": ["Ghost of Billy Royalton"],
+    "alternativeArtists": { "Dance Gavin Dance": ["Dance, Gavin Dance"] }
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Tame Impala"],
+    "title": "Lost in Yesterday",
+    "alternativeTitles": [],
+    "alternativeArtists": {}
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["The Weeknd"],
+    "title": "I feel it coming",
+    "alternativeTitles": [],
+    "alternativeArtists": { "The Weeknd": ["The Weekend", "Weekend", "Weeknd"] }
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Gorillaz", "Shaun Ryder"],
+    "title": "Dare",
+    "alternativeTitles": [],
+    "alternativeArtists": {
+      "Gorillaz": ["Gorillas", "Gorilaz", "Gorilas"]
+    }
+  }
+]

@@ -5,8 +5,8 @@ function MusicRound(props) {
     return (
       <>
         <h1>{props.question + 1}: What song is this? Who is it by?</h1>
-        <audio controls>
-          <source src={props.question + '.mp3'} type="audio/mpeg" />
+        <audio controls key={props.question}>
+          <source src={props.question + 1 + '.mp3'} type="audio/mpeg" />
         </audio>
       </>
     );
