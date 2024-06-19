@@ -105,43 +105,46 @@ class HandleAnswers:
         def convert_lower(inp):
             return inp.lower()
 
-        if player_answer[1].lower() == correct_answer["title"].lower():
-            music_score += 1
-        else:
-            formatted_titles = list(
-                map(convert_lower, correct_answer["alternative_titles"])
-            )
-            if player_answer[1].lower() in formatted_titles:
+        try:
+            if player_answer[1].lower() == correct_answer["title"].lower():
                 music_score += 1
-        lower_artists_user = list(map(convert_lower, player_answer[0]))
-        temporary_dicts = {}
-        for artist_find in correct_answer["artists"]:
+            else:
+                formatted_titles = list(
+                    map(convert_lower, correct_answer["alternative_titles"])
+                )
+                if player_answer[1].lower() in formatted_titles:
+                    music_score += 1
+            lower_artists_user = list(map(convert_lower, player_answer[0]))
+            temporary_dicts = {}
+            for artist_find in correct_answer["artists"]:
 
-            if artist_find.lower() in lower_artists_user:
-                music_score += 1
+                if artist_find.lower() in lower_artists_user:
+                    music_score += 1
 
-                if artist_find in correct_answer["alternative_artists"]:
+                    if artist_find in correct_answer["alternative_artists"]:
 
-                    temporary_dicts.update(
-                        {
-                            artist_find: correct_answer["alternative_artists"][
-                                artist_find
-                            ]
-                        }
-                    )
-                    del correct_answer["alternative_artists"][artist_find]
+                        temporary_dicts.update(
+                            {
+                                artist_find: correct_answer["alternative_artists"][
+                                    artist_find
+                                ]
+                            }
+                        )
+                        del correct_answer["alternative_artists"][artist_find]
 
-        alt_artists = list(correct_answer["alternative_artists"].keys())
+            alt_artists = list(correct_answer["alternative_artists"].keys())
 
-        for check_alts in alt_artists:
-            if set(player_answer[0]).intersection(
-                set(correct_answer["alternative_artists"][check_alts])
-            ):
-                music_score += 1
+            for check_alts in alt_artists:
+                if set(player_answer[0]).intersection(
+                    set(correct_answer["alternative_artists"][check_alts])
+                ):
+                    music_score += 1
 
-        correct_answer["alternative_artists"].update(temporary_dicts)
+            correct_answer["alternative_artists"].update(temporary_dicts)
 
-        return music_score
+            return music_score
+        except IndexError:
+            return music_score
 
     def calculate_scores(self):
 
