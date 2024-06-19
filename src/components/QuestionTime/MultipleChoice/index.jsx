@@ -1,7 +1,9 @@
 import questions from '../../../assets/questions.json';
 
 function MultipleChoice(props) {
-  if (props.inUse) {
+  if (props.finished) {
+    return;
+  } else if (props.inUse) {
     return (
       <>
         <h1>
