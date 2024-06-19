@@ -37,7 +37,7 @@ function QuestionTime() {
 
       <EndOfQuiz inUse={finished} />
 
-      <button onClick={nextQuestion}>Hello</button>
+      <button onClick={nextQuestion}>Next question</button>
     </>
   );
 }
