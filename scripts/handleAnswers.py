@@ -150,6 +150,7 @@ class HandleAnswers:
     def calculate_scores(self):
 
         self.outcomes = []
+        self.final_scores = {}
         player_index = 0
         for player in self.final_answers:
             current_player = self.names[player_index]
@@ -189,6 +190,7 @@ class HandleAnswers:
                     )
 
             self.outcomes.append({current_player: player_outcome})
+            self.final_scores[current_player] = player_outcome
 
             player_index += 1
 
@@ -203,9 +205,25 @@ class HandleAnswers:
         score_sort = lambda sc: sc[1]
         scores.sort(key=score_sort, reverse=True)
 
-        results_data = {"sorted scores": scores, "outcome_data": self.outcomes}
+        results_data = {"sorted scores": scores, "outcome_data": self.final_scores}
 
-        with open("data.json", "w") as f:
+        try:
+            os.mkdir(
+                (
+                    os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)), "scripts/output"
+                    )
+                )
+            )
+        except FileExistsError:
+            pass
+
+        with open((
+                    os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)),
+                        "scripts/output/answer_data.json",
+                    )
+                ), "w") as f:
             json.dump(results_data, f)
 
 
