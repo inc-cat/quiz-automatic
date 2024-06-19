@@ -1,8 +1,9 @@
+import './answers.css';
 import questions from '../../assets/questions.json';
 import answerData from '../../assets/answer_data.json';
 import Finished from './Finished';
 import { useState } from 'react';
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -47,7 +48,7 @@ function Answers() {
       <h3>Answers page!</h3>
       <Question questionNumber={question} finished={finished} />
       <Finished inUse={finished} />
-      <Bar data={scoreData} />
+      <Bar data={scoreData} className="graph" />
 
       <button onClick={nextQuestion}>Next</button>
     </>
