@@ -1,7 +1,5 @@
 import questions from '../../assets/questions.json';
-import MultipleChoice from './MultipleChoice';
-import StraightAnswer from './StraightAnswer';
-import MusicRound from './MusicRound';
+import Question from './Question';
 import EndOfQuiz from './EndOfQuiz';
 import { useState } from 'react';
 
@@ -19,22 +17,7 @@ function QuestionTime() {
 
   return (
     <>
-      <MultipleChoice
-        inUse={questions[questionNumber].questionType === 'Multiple Choice'}
-        question={questionNumber}
-        finished={finished}
-      />
-      <StraightAnswer
-        inUse={questions[questionNumber].questionType === 'Straight Answer'}
-        question={questionNumber}
-        finished={finished}
-      />
-      <MusicRound
-        inUse={questions[questionNumber].questionType === 'Music Round'}
-        question={questionNumber}
-        finished={finished}
-      />
-
+      <Question questionNumber={questionNumber} finished={finished} />
       <EndOfQuiz inUse={finished} />
 
       <button onClick={nextQuestion}>Next question</button>
