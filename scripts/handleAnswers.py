@@ -204,7 +204,23 @@ class HandleAnswers:
 
         results_data = {"sorted scores": scores, "outcome_data": self.outcomes}
 
-        with open("data.json", "w") as f:
+        try:
+            os.mkdir(
+                (
+                    os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)), "scripts/output"
+                    )
+                )
+            )
+        except FileExistsError:
+            pass
+
+        with open((
+                    os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)),
+                        "scripts/output/answer_data.json",
+                    )
+                ), "w") as f:
             json.dump(results_data, f)
 
 
