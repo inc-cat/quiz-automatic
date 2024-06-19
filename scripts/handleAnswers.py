@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import itertools
 
 
 class HandleAnswers:
@@ -190,7 +191,7 @@ class HandleAnswers:
                     )
 
             self.outcomes.append({current_player: player_outcome})
-            self.final_scores[current_player] = player_outcome
+            self.final_scores[current_player] = list(itertools.accumulate(player_outcome))
 
             player_index += 1
 
