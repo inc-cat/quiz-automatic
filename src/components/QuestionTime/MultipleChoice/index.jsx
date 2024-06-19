@@ -5,7 +5,7 @@ function MultipleChoice(props) {
     return (
       <>
         <h1>
-          {props.question}: {questions[props.question].question}
+          {props.question + 1}: {questions[props.question].question}
         </h1>
         {questions[props.question].options.map(function (option, i) {
           return (

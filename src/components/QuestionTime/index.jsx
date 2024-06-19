@@ -1,6 +1,7 @@
 import questions from '../../assets/questions.json';
 import MultipleChoice from './MultipleChoice';
 import StraightAnswer from './StraightAnswer';
+import MusicRound from './MusicRound';
 import { useState } from 'react';
 
 function QuestionTime() {
@@ -19,6 +20,10 @@ function QuestionTime() {
       />
       <StraightAnswer
         inUse={questions[questionNumber].questionType === 'Straight Answer'}
+        question={questionNumber}
+      />
+      <MusicRound
+        inUse={questions[questionNumber].questionType === 'Music Round'}
         question={questionNumber}
       />
       <button onClick={nextQuestion}>Hello</button>

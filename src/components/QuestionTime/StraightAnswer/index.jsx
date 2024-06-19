@@ -4,7 +4,7 @@ function StraightAnswer(props) {
   if (props.inUse) {
     return (
       <h1>
-        {props.question}: {questions[props.question].question}
+        {props.question + 1}: {questions[props.question].question}
       </h1>
     );
   } else {
