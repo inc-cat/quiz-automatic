@@ -31,6 +31,8 @@ function Answers() {
     }
   };
 
+  const numberConversion = { 0: 'A', 1: 'B', 2: 'C', 3: 'D' };
+
   let scoreData = {
     labels: names,
     datasets: [
@@ -51,8 +53,8 @@ function Answers() {
       <h3>Answers page!</h3>
       <Question questionNumber={question} finished={finished} />
       <Finished inUse={finished} />
+      <h1>{numberConversion[questions[question]['correctAnswer']]}</h1>
       <Bar data={scoreData} className="graph" />
-
       <button onClick={nextQuestion}>Next</button>
     </>
   );
