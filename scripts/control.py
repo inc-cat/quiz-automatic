@@ -106,7 +106,7 @@ class CheckQuestions:
                     self.pseudo_error(entry, "not list")
 
                 if not isinstance(self.questions[entry]["alternativeArtists"], dict):
-                    self.pseudi_error(entry, "alternative aritsts")
+                    self.pseudo_error(entry, "alternative aritsts")
 
             if not isinstance(self.questions[entry]["title"], str):
                 self.pseudo_error(entry, "not string")
