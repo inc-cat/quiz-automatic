@@ -39,6 +39,9 @@ function Answers() {
         data: names.map(function (name) {
           return answerData.outcome_data[name][question];
         }),
+        backgroundColor: names.map(function (name) {
+          return 'rgba(255, 255, 255, 255)';
+        }),
       },
     ],
   };
