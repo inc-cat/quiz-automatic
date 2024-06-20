@@ -8,6 +8,18 @@
 
   {
     "questionType": "Multiple Choice",
+    "question": "Who is Finn the Human's best friend in Adventure Time?",
+    "options": [
+      "Lumpy Space Princess",
+      "Jake the Dog",
+      "Earl of Lemongrab",
+      "King of Ooo"
+    ],
+    "correctAnswer": 1
+  },
+
+  {
+    "questionType": "Multiple Choice",
     "question": "How many teeth does an adult human have?",
     "options": [20, 28, 32, 38],
     "correctAnswer": 2
@@ -15,9 +27,49 @@
 
   {
     "questionType": "Multiple Choice",
+    "question": "Which of these UK place names is not real?",
+    "options": ["Bell End", "Twatt", "Brown Willy", "Buttonshire"],
+    "correctAnswer": 3
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "What is the capital of Thailand?",
+    "options": ["Bangtitz", "Bangkok", "Bangdik", "Bangpusi"],
+    "correctAnswer": 1
+  },
+
+  {
+    "questionType": "Multiple Choice",
     "question": "What was the initial relase year for Dead by Daylight?",
     "options": [2014, 2015, 2016, 2017],
     "correctAnswer": 2
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "Which shop has the most branches in the UK?",
+    "options": ["Greggs", "KFC", "Burger King", "McDonald's"],
+    "correctAnswer": 0,
+    "notes": [
+      "McDonalds: 1439",
+      "KFC: 1016",
+      "Burger King: 526",
+      "Greggs: 2269",
+      "Data from scrapehero.com"
+    ]
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "Blender is a free open source software used to creating what?",
+    "options": [
+      "YouTube thumbnails",
+      "Virtual Machines",
+      "Musical playlists",
+      "3D computer graphics"
+    ],
+    "correctAnswer": 3
   },
 
   {
@@ -31,6 +83,30 @@
       "PewDiePie 8th: 111M",
       "MrBeast 1st: 281M"
     ]
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "Vernor Winfield MacBriare Smith IV is the birth name of which celebrity?",
+    "options": [
+      "Matthew McConaughey",
+      "Ewan McGregor",
+      "Mac Demarco",
+      "Seth MacFarlane"
+    ],
+    "correctAnswer": 2
+  },
+
+  {
+    "questionType": "Multiple Choice",
+    "question": "Who was Doctor Who's 12th Doctor?",
+    "options": [
+      "Peter Capaldi",
+      "Matt Smith",
+      "Jodie Whittaker",
+      "David Tennant"
+    ],
+    "correctAnswer": 0
   },
 
   {
@@ -181,5 +257,21 @@
     "alternativeArtists": {
       "Gorillaz": ["Gorillas", "Gorilaz", "Gorilas"]
     }
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Mac Demarco"],
+    "title": "Chamber of Reflection",
+    "alternativeTitles": [],
+    "alternativeArtists": {}
+  },
+
+  {
+    "questionType": "Music Round",
+    "artists": ["Daft Punk", "Pharrell Williams"],
+    "title": "Get Lucky",
+    "alternativeTitles": [],
+    "alternativeArtists": { "Pharrell Williams": ["Pharrell"] }
   }
 ]
