@@ -19,7 +19,7 @@ function QuestionTime() {
     <>
       <Question questionNumber={questionNumber} finished={finished} />
       <EndOfQuiz inUse={finished} />
-
+      <p></p>
       <button onClick={nextQuestion}>Next question</button>
     </>
   );
