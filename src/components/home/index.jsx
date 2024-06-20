@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import syntax from './syntax.png';
 
 function Home() {
@@ -49,6 +50,8 @@ function Home() {
         or your score will not reflect your answers.
       </p>
       <p>Have fun and enjoy!</p>
+      <Link to="/questiontime">Start?</Link>
+      <p></p>
     </>
   );
 }
