@@ -1,0 +1,13 @@
+.graph {
+  max-height: 425px;
+}
+
+.show-answer {
+  font-size: 24pt;
+  padding-left: 15px;
+  font-weight: 700;
+}
+
+.button-next {
+  margin-bottom: 25px;
+}
