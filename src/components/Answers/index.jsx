@@ -20,7 +20,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 function Answers() {
   let [question, setQuestion] = useState(0);
   let [finished, setFinished] = useState(false);
-  let [showButton, setShowButton] = useState('Show answer');
+  let [showButton, setShowButton] = useState('Answer?');
   let [buttonNumber, setButtonNumber] = useState(2);
   let [showAnswer, setShowAnswer] = useState('');
   const names = Object.keys(answerData.outcome_data);
@@ -43,6 +43,19 @@ function Answers() {
     } else if (buttonNumber % 2 === 1) {
       setShowButton('Hide answer');
       setShowAnswer(numberConversion[questions[question]['correctAnswer']]);
+    }
+  };
+
+  const AnswerButton = function () {
+    console.log(setFinished);
+    if (!finished) {
+      return (
+        <button className="button-next" onClick={nextQuestion}>
+          Next answer
+        </button>
+      );
+    } else {
+      return;
     }
   };
 
@@ -69,9 +82,9 @@ function Answers() {
       <Question questionNumber={question} finished={finished} />
       <Finished inUse={finished} />
       <button onClick={buttonHandle}>{showButton}</button>
-      <span class="show-answer">{showAnswer}</span>
+      <span className="show-answer">{showAnswer}</span>
       <Bar data={scoreData} className="graph" />
-      <button onClick={nextQuestion}>Next</button>
+      <AnswerButton />
     </>
   );
 }
