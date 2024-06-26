@@ -16,6 +16,17 @@ class CheckQuestions:
         for ind in data:
             self.questions.append(ind)
 
+        try:
+            os.mkdir(
+                    (
+                        os.path.join(
+                            os.path.dirname(os.path.dirname(__file__)), "answers"
+                        )
+                    )
+                )
+        except FileExistsError:
+            pass
+
         self.information = []
         self.categories = [
             "Multiple Choice",
