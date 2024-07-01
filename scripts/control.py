@@ -27,6 +27,14 @@ class CheckQuestions:
         except FileExistsError:
             pass
 
+        blank_data = {"sorted scores": [], "outcome_data" : {}}
+
+        with open(os.path.join(
+                        os.path.dirname(os.path.dirname(__file__)),
+                        "src/assets/answer_data.json",
+                    ), 'w') as f:
+            json.dump(blank_data, f)
+
         self.information = []
         self.categories = [
             "Multiple Choice",
