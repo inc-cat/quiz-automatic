@@ -14,8 +14,8 @@ function App() {
         <h1></h1>
 
         <Routes>
-          <Route path="/answers" element={<Answers />} />
-          <Route path="/questiontime" element={<QuestionTime />} />
+          <Route path="/pubquiz/answers" element={<Answers />} />
+          <Route path="/pubquiz" element={<QuestionTime />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
